@@ -65,8 +65,11 @@ namespace Components
 
 	void Stats::UploadStats()
 	{
-		if(!Dedicated::IsEnabled())
-			Utils::Hook::Call<void(int)>(0x416e10)(0); // Makes the game save .stat file very often.
+		if (!Dedicated::IsEnabled())
+		{
+			// Makes the game save .stat file very often.
+			Utils::Hook::Call<void(int)>(0x416e10)(0);
+		}
 		return Utils::Hook::Call<void(int)>(0x4752b0)(0);
 	}
 

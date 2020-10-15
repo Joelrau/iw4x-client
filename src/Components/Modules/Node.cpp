@@ -170,7 +170,7 @@ namespace Components
 		if (Dedicated::IsEnabled() && Dvar::Var("sv_lanOnly").get<bool>())
 			return;
 
-		if (!Dedicated::IsEnabled() && Utils::Hook::Get<int>(0xb2c540) != 0) // 0xb2c540 = clcState
+		if (!Dedicated::IsEnabled() && Utils::Hook::Get<int>(0xb2c540) > 0) // 0xb2c540 = clcState
 		{
 			wasIngame = true;
 			return; // don't run while ingame because it can still cause lag spikes on lower end PCs & crash the game
