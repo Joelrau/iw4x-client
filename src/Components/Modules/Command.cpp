@@ -160,9 +160,9 @@ namespace Components
 	{
 		AssertSize(Game::cmd_function_t, 24);
 
-		const int toastDurationShort = 1000;
-		const int toastDurationMedium = 2500;
-		const int toastDurationLong = 5000;
+		static int toastDurationShort = 1000;
+		static int toastDurationMedium = 2500;
+		static int toastDurationLong = 5000;
 
 		// Disable native noclip command
 		Utils::Hook::Nop(0x474846, 5);
